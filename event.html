@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event | Automotive Photography</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ── TOP NAV ──────────────────────────────────────── -->
+  <nav class="event-nav">
+    <a href="index.html" class="back-link">&#8592; Back to Events</a>
+    <span class="event-nav-title" id="event-nav-title"></span>
+  </nav>
+
+  <!-- ── EVENT HERO HEADER ────────────────────────────── -->
+  <header class="event-header" id="event-header">
+    <!-- Cover image injected by event.js -->
+    <div class="event-header-content">
+      <h1 class="event-title" id="event-title">Loading&hellip;</h1>
+      <p class="event-date" id="event-date"></p>
+    </div>
+  </header>
+
+  <!-- ── PHOTO GRID ───────────────────────────────────── -->
+  <main class="gallery-main">
+    <div class="gallery-grid" id="gallery-grid">
+      <!-- Populated by js/event.js -->
+    </div>
+  </main>
+
+  <!-- ── LIGHTBOX ─────────────────────────────────────── -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-prev"  id="lightbox-prev"  aria-label="Previous photo">&#8249;</button>
+    <button class="lightbox-next"  id="lightbox-next"  aria-label="Next photo">&#8250;</button>
+    <div class="lightbox-img-wrapper">
+      <img class="lightbox-img" id="lightbox-img" src="" alt="">
+    </div>
+    <div class="lightbox-counter" id="lightbox-counter"></div>
+  </div>
+
+  <!-- ── FOOTER ───────────────────────────────────────── -->
+  <footer class="site-footer">
+    <p>&copy; 2025 YOUR NAME. All rights reserved.</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/event.js"></script>
+</body>
+</html>

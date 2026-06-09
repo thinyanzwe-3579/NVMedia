@@ -1,0 +1,85 @@
+// ═══════════════════════════════════════════════════════════════
+//  EVENT DATA — edit this file to add / update your events
+// ═══════════════════════════════════════════════════════════════
+//
+//  Each event object accepts these fields:
+//
+//    slug    (required) — URL-safe identifier, no spaces or special chars
+//                         e.g. "cars-and-coffee-miami-2024"
+//
+//    name    (required) — Display name shown on cards and the event page
+//                         e.g. "Cars & Coffee Miami"
+//
+//    date    (optional) — Any string, shown as a subtitle on the event page
+//                         e.g. "March 15, 2024"  or  "March 2024"
+//
+//    cover   (optional) — Path to the hero / cover image for this event.
+//                         Shown as the card thumbnail and event page banner.
+//                         e.g. "photos/cars-and-coffee-miami-2024/cover.jpg"
+//
+//    photos  (required) — Array of image paths for the gallery.
+//                         Tip: name your files 01.jpg, 02.jpg … for easy ordering.
+//
+// ─────────────────────────────────────────────────────────────
+//  FOLDER CONVENTION (recommended):
+//
+//    photos/
+//    └── <slug>/
+//        ├── cover.jpg   ← hero image
+//        ├── 01.jpg
+//        ├── 02.jpg
+//        └── ...
+//
+//  To add a new event:
+//    1. Create a folder  photos/<your-slug>/
+//    2. Drop your photos in
+//    3. Add a new object below, following the same pattern
+// ═══════════════════════════════════════════════════════════════
+
+const EVENTS = [
+
+  // ── Example event 1 ─────────────────────────────────────────
+  {
+    slug:   'cars-and-coffee-miami-2024',
+    name:   'Cars & Coffee Miami',
+    date:   'March 15, 2024',
+    cover:  'photos/cars-and-coffee-miami-2024/cover.jpg',
+    photos: [
+      'photos/cars-and-coffee-miami-2024/01.jpg',
+      'photos/cars-and-coffee-miami-2024/02.jpg',
+      'photos/cars-and-coffee-miami-2024/03.jpg',
+      'photos/cars-and-coffee-miami-2024/04.jpg',
+      'photos/cars-and-coffee-miami-2024/05.jpg',
+    ]
+  },
+
+  // ── Example event 2 ─────────────────────────────────────────
+  {
+    slug:   'formula-drift-orlando-2024',
+    name:   'Formula Drift Orlando',
+    date:   'April 6, 2024',
+    cover:  'photos/formula-drift-orlando-2024/cover.jpg',
+    photos: [
+      'photos/formula-drift-orlando-2024/01.jpg',
+      'photos/formula-drift-orlando-2024/02.jpg',
+      'photos/formula-drift-orlando-2024/03.jpg',
+      'photos/formula-drift-orlando-2024/04.jpg',
+    ]
+  },
+
+  // ── Example event 3 ─────────────────────────────────────────
+  {
+    slug:   'exotic-car-show-ft-lauderdale-2024',
+    name:   'Exotic Car Show Ft. Lauderdale',
+    date:   'June 2024',
+    cover:  'photos/exotic-car-show-ft-lauderdale-2024/cover.jpg',
+    photos: [
+      'photos/exotic-car-show-ft-lauderdale-2024/01.jpg',
+      'photos/exotic-car-show-ft-lauderdale-2024/02.jpg',
+      'photos/exotic-car-show-ft-lauderdale-2024/03.jpg',
+    ]
+  },
+
+  // ── Add more events below this line ─────────────────────────
+
+];

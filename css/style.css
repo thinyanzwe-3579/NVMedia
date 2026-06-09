@@ -1,0 +1,503 @@
+/* ═══════════════════════════════════════════════════════════
+   AUTOMOTIVE PORTFOLIO — DARK CINEMATIC THEME
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  --bg:         #0d0d0d;
+  --bg-card:    #181818;
+  --text:       #f0f0f0;
+  --text-muted: #777;
+  --border:     rgba(255, 255, 255, 0.07);
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body:    'Montserrat', sans-serif;
+  --transition-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ── RESET ────────────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ════════════════════════════════════════════════════════
+   HOME PAGE — HERO
+   ════════════════════════════════════════════════════════ */
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+  user-select: none;
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 14vw, 11rem);
+  letter-spacing: 0.15em;
+  line-height: 1;
+  color: var(--text);
+}
+
+.hero-subtitle {
+  font-size: clamp(0.65rem, 1.8vw, 0.9rem);
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 1.2rem;
+}
+
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  animation: nudge 2.2s ease-in-out infinite;
+}
+
+@keyframes nudge {
+  0%, 100% { transform: translateY(0);   opacity: 0.5; }
+  50%       { transform: translateY(8px); opacity: 1;   }
+}
+
+/* ════════════════════════════════════════════════════════
+   HOME PAGE — EVENTS GRID
+   ════════════════════════════════════════════════════════ */
+
+.events-section {
+  padding: 5rem 2rem 7rem;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ── EVENT CARD ───────────────────────────────────────── */
+
+.event-card {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+  background: var(--bg-card);
+}
+
+.event-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    transform 0.7s var(--transition-smooth),
+    filter   0.7s ease;
+  filter: brightness(0.65);
+}
+
+.event-card:hover img,
+.event-card:focus-visible img {
+  transform: scale(1.06);
+  filter: brightness(0.35);
+}
+
+.event-card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.6rem;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75) 0%,
+    transparent        55%
+  );
+  transition: background 0.5s ease;
+}
+
+.event-card:hover .event-card-overlay,
+.event-card:focus-visible .event-card-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+}
+
+.event-card-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.2vw, 1.75rem);
+  letter-spacing: 0.08em;
+  color: #fff;
+  transform: translateY(4px);
+  transition: transform 0.4s var(--transition-smooth);
+}
+
+.event-card:hover .event-card-name,
+.event-card:focus-visible .event-card-name {
+  transform: translateY(0);
+}
+
+.event-card-meta {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 0.45rem;
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity   0.4s ease 0.06s,
+    transform 0.4s var(--transition-smooth) 0.06s;
+}
+
+.event-card:hover .event-card-meta,
+.event-card:focus-visible .event-card-meta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* No-cover fallback */
+.event-card.no-cover img {
+  display: none;
+}
+
+/* ════════════════════════════════════════════════════════
+   EVENT PAGE — TOP NAV
+   ════════════════════════════════════════════════════════ */
+
+.event-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 2rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 13, 13, 0.96) 0%,
+    transparent            100%
+  );
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.back-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: color 0.25s;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+  color: var(--text);
+}
+
+.event-nav-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.25em;
+  color: var(--text-muted);
+}
+
+/* ════════════════════════════════════════════════════════
+   EVENT PAGE — HERO HEADER
+   ════════════════════════════════════════════════════════ */
+
+.event-header {
+  height: 55vh;
+  min-height: 320px;
+  display: flex;
+  align-items: flex-end;
+  padding: 3rem 2rem;
+  position: relative;
+  background: var(--bg-card);
+  overflow: hidden;
+}
+
+/* Dark gradient over the cover image */
+.event-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(13, 13, 13, 1)   0%,
+    rgba(13, 13, 13, 0.5) 50%,
+    rgba(13, 13, 13, 0.15) 100%
+  );
+  z-index: 1;
+}
+
+.event-header-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.55);
+}
+
+.event-header-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.event-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 9vw, 7rem);
+  letter-spacing: 0.08em;
+  line-height: 1;
+  color: var(--text);
+}
+
+.event-date {
+  font-size: 0.72rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 0.85rem;
+}
+
+/* ════════════════════════════════════════════════════════
+   EVENT PAGE — MASONRY GALLERY
+   ════════════════════════════════════════════════════════ */
+
+.gallery-main {
+  padding: 2.5rem 2rem 7rem;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.gallery-grid {
+  columns: 3;
+  column-gap: 0.6rem;
+}
+
+@media (max-width: 900px)  { .gallery-grid { columns: 2; } }
+@media (max-width: 540px)  { .gallery-grid { columns: 1; } }
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 0.6rem;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  filter: brightness(0.88);
+  transition:
+    transform 0.55s var(--transition-smooth),
+    filter   0.55s ease;
+}
+
+.gallery-item:hover img,
+.gallery-item:focus-visible img {
+  transform: scale(1.04);
+  filter: brightness(0.5);
+}
+
+.gallery-item-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-item-icon,
+.gallery-item:focus-visible .gallery-item-icon {
+  opacity: 1;
+}
+
+.gallery-item-icon svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  stroke: rgba(255, 255, 255, 0.85);
+  fill: none;
+  stroke-width: 1.5;
+}
+
+/* ════════════════════════════════════════════════════════
+   LIGHTBOX
+   ════════════════════════════════════════════════════════ */
+
+.lightbox {
+  display: none;               /* shown via .active class */
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.97);
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-img-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 4rem 5rem;   /* space for arrows */
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  /* subtle fade when switching photos */
+  animation: lb-fade 0.2s ease;
+}
+
+@keyframes lb-fade {
+  from { opacity: 0.4; }
+  to   { opacity: 1;   }
+}
+
+/* Shared button styles */
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s, transform 0.2s;
+  padding: 0.75rem;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  color: #fff;
+}
+
+.lightbox-close {
+  top: 1.2rem;
+  right: 1.5rem;
+  font-size: 1.6rem;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3.5rem;
+  font-weight: 100;
+}
+
+.lightbox-prev { left: 0.5rem; }
+.lightbox-next { right: 0.5rem; }
+
+.lightbox-prev:hover { transform: translateY(-50%) translateX(-3px); }
+.lightbox-next:hover { transform: translateY(-50%) translateX( 3px); }
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.4);
+  user-select: none;
+}
+
+/* ════════════════════════════════════════════════════════
+   FOOTER
+   ════════════════════════════════════════════════════════ */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+}
+
+/* ════════════════════════════════════════════════════════
+   RESPONSIVE TWEAKS
+   ════════════════════════════════════════════════════════ */
+
+@media (max-width: 700px) {
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-nav {
+    padding: 1rem 1.2rem;
+  }
+
+  .gallery-main {
+    padding: 2rem 1rem 6rem;
+  }
+
+  .lightbox-img-wrapper {
+    padding: 3.5rem 3rem;
+  }
+
+  .lightbox-prev,
+  .lightbox-next {
+    font-size: 2.5rem;
+  }
+}
