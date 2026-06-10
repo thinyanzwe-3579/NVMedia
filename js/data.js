@@ -55,15 +55,15 @@ const EVENTS = [
 
   // ── Example event 2 ─────────────────────────────────────────
   {
-    slug:   'formula-drift-orlando-2024',
-    name:   'Formula Drift Orlando',
+    slug:   'carfe-and-porsche',
+    name:   'Carfe & Porsche',
     date:   'April 6, 2024',
-    cover:  'photos/formula-drift-orlando-2024/cover.jpg',
+    cover:  'photos/carfe-and-porsche/cover.jpg',
     photos: [
-      'photos/formula-drift-orlando-2024/01.jpg',
-      'photos/formula-drift-orlando-2024/02.jpg',
-      'photos/formula-drift-orlando-2024/03.jpg',
-      'photos/formula-drift-orlando-2024/04.jpg',
+      'photos/carfe-and-porsche/01.jpg',
+      'photos/carfe-and-porsche/02.jpg',
+      'photos/carfe-and-porsche/03.jpg',
+      'photos/carfe-and-porsche/04.jpg',
     ]
   },
 
