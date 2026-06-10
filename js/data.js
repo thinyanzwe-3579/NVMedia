@@ -40,16 +40,16 @@ const EVENTS = [
 
   // ── Example event 1 ─────────────────────────────────────────
   {
-    slug:   'cars-and-coffee-miami-2024',
-    name:   'Cars & Coffee Miami',
-    date:   'March 15, 2024',
-    cover:  'photos/cars-and-coffee-miami-2024/cover.jpg',
+    slug:   'retrohavoc-2025',
+    name:   'RetroHavoc 2025',
+    date:   '2025',
+    cover:  'photos/retrohavoc-2025/cover.jpg',
     photos: [
-      'photos/cars-and-coffee-miami-2024/01.jpg',
-      'photos/cars-and-coffee-miami-2024/02.jpg',
-      'photos/cars-and-coffee-miami-2024/03.jpg',
-      'photos/cars-and-coffee-miami-2024/04.jpg',
-      'photos/cars-and-coffee-miami-2024/05.jpg',
+      'photos/retrohavoc-2025/01.jpg',
+      'photos/retrohavoc-2025/02.jpg',
+      'photos/retrohavoc-2025/03.jpg',
+      'photos/retrohavoc-2025/04.jpg',
+      'photos/retrohavoc-2025/05.jpg',
     ]
   },
 
