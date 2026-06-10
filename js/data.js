@@ -53,7 +53,20 @@ const EVENTS = [
     ]
   },
 
-  // ── Example event 2 ─────────────────────────────────────────
+  // ── Event 2 ─────────────────────────────────────────────────
+  {
+    slug:   'distrix14-2025',
+    name:   'DISTRIX14 2025',
+    date:   '2025',
+    cover:  'photos/distrix14-2025/cover.jpg',
+    photos: [
+      'photos/distrix14-2025/01.jpg',
+      'photos/distrix14-2025/02.jpg',
+      'photos/distrix14-2025/03.jpg',
+    ]
+  },
+
+  // ── Event 3 ─────────────────────────────────────────────────
   {
     slug:   'carfe-and-porsche',
     name:   'Carfe & Porsche',
