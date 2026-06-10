@@ -4,93 +4,122 @@
   var canvas = document.getElementById('hero-canvas');
   if (!canvas) return;
 
-  var ctx = canvas.getContext('2d');
-  var bands = [];
+  var ctx   = canvas.getContext('2d');
   var W, H;
+  var start = null;
 
-  // Automotive pixel-stretch palette
-  // Warm tones (taillights, brake glow) + cool tones (headlights, neon)
-  var PALETTE = [
-    [220,  15,  15],  // deep red
-    [255,  40,   0],  // orange-red
-    [255,  90,   0],  // orange
-    [255, 170,   0],  // amber
-    [255,  20,  70],  // hot pink / brake light
-    [200,   0, 200],  // purple
-    [  0, 180, 255],  // ice blue (headlights)
-    [  0, 100, 220],  // deep blue
-    [255,  50,  30],  // coral red
-    [220, 220, 220],  // chrome / silver flash
+  // Band colors: white, red, near-black, silver, deep purple, deep blue
+  var COLORS = [
+    [255, 255, 255],  // white
+    [220,   0,   0],  // red
+    [ 45,  45,  52],  // near-black
+    [190, 196, 202],  // silver
+    [ 80,   0, 170],  // deep purple
+    [  0,  25, 185],  // deep blue
   ];
+
+  var SPACING = 22;   // px gap between each line in the band
+  var LW      = 2.0;  // core line width
+  var STEPS   = 220;  // path resolution — higher = smoother curves
 
   function resize() {
     W = canvas.width  = canvas.offsetWidth;
     H = canvas.height = canvas.offsetHeight;
-    buildBands();
   }
 
-  function buildBands() {
-    bands = [];
-    // One band roughly every 2–3px for density
-    var count = Math.floor(H / 2.5);
+  // Three overlaid sines → organic, non-repeating wave feel
+  // Each line index gets a different phase so they don't move in unison
+  function waveAmt(t, idx, time) {
+    var scale = Math.sqrt(W * W + H * H) * 0.42;
+    return (
+      scale * 0.09 * Math.sin(t * 1.7  * Math.PI - time * 0.48 + idx * 0.55) +
+      scale * 0.04 * Math.sin(t * 4.1  * Math.PI - time * 0.82 + idx * 0.90) +
+      scale * 0.02 * Math.sin(t * 8.6  * Math.PI - time * 1.35 + idx * 1.30)
+    );
+  }
 
-    for (var i = 0; i < count; i++) {
-      var col      = PALETTE[Math.floor(Math.random() * PALETTE.length)];
-      var baseA    = Math.random() * 0.22 + 0.02;
-      bands.push({
-        y:           Math.random() * H,
-        h:           Math.random() * 5 + 0.5,   // 0.5 – 5.5 px tall
-        r: col[0], g: col[1], b: col[2],
-        alpha:       baseA,
-        alphaTarget: Math.random() * 0.28 + 0.02,
-        alphaSpeed:  Math.random() * 0.004 + 0.0008,
-        // How wide the band stretches (60 – 100 % of canvas width)
-        spread:      Math.random() * 0.4 + 0.6,
-      });
+  // Draw one pass of a line (called twice per color: bloom layer + core)
+  function strokeLine(idx, perpBase, time, lineWidth, opacity, blur) {
+    var D  = Math.sqrt(W * W + H * H);
+    // Unit vector along diagonal (top-left → bottom-right)
+    var ux = W / D,  uy = H / D;
+    // Perpendicular (90° CCW from diagonal)
+    var px = -uy,    py = ux;
+
+    var col  = COLORS[idx];
+    var rgba = col[0] + ',' + col[1] + ',' + col[2];
+
+    ctx.save();
+    ctx.shadowBlur  = blur;
+    ctx.shadowColor = 'rgba(' + rgba + ',1)';
+    ctx.strokeStyle = 'rgba(' + rgba + ',' + opacity + ')';
+    ctx.lineWidth   = lineWidth;
+    ctx.lineCap     = 'round';
+    ctx.lineJoin    = 'round';
+    ctx.beginPath();
+
+    for (var s = 0; s <= STEPS; s++) {
+      var t    = s / STEPS;
+      // Extend 8% beyond each edge so lines reach the true corners
+      var tExt = t * 1.16 - 0.08;
+      var d    = tExt * D;
+      var w    = waveAmt(t, idx, time);
+      // Fade out near the bottom-right end (last 15%)
+      var fade = t > 0.85 ? 1 - (t - 0.85) / 0.15 : 1;
+
+      var x = ux * d + px * (perpBase + w);
+      var y = uy * d + py * (perpBase + w);
+
+      if (s === 0) {
+        ctx.moveTo(x, y);
+      } else {
+        // Vary opacity along path for the fade at the end
+        if (t > 0.85) {
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.strokeStyle = 'rgba(' + rgba + ',' + (opacity * fade) + ')';
+          ctx.shadowColor = 'rgba(' + rgba + ',' + fade + ')';
+          ctx.moveTo(x, y);
+        } else {
+          ctx.lineTo(x, y);
+        }
+      }
     }
+
+    ctx.stroke();
+    ctx.restore();
   }
 
-  function tick() {
-    ctx.clearRect(0, 0, W, H);
+  function tick(ts) {
+    if (!start) start = ts;
+    var time = (ts - start) / 1000;
 
-    // Solid dark base
+    ctx.clearRect(0, 0, W, H);
     ctx.fillStyle = '#0d0d0d';
     ctx.fillRect(0, 0, W, H);
 
-    // Draw each horizontal band with a center-to-edge fade
-    for (var i = 0; i < bands.length; i++) {
-      var b  = bands[i];
+    var n   = COLORS.length;
+    var mid = (n - 1) / 2;
 
-      // Slowly breathe alpha toward target
-      var diff = b.alphaTarget - b.alpha;
-      b.alpha += diff * b.alphaSpeed * 12;
-      if (Math.abs(diff) < 0.004) {
-        b.alphaTarget = Math.random() * 0.28 + 0.02;
-      }
+    for (var i = 0; i < n; i++) {
+      var base = (i - mid) * SPACING;
 
-      var halfW = W * b.spread * 0.5;
-      var cx    = W * 0.5;
-      var rgba  = b.r + ',' + b.g + ',' + b.b;
+      // ── Outer bloom halo ──────────────────────────────
+      strokeLine(i, base, time, LW * 8,  0.12, 45);
 
-      var grd = ctx.createLinearGradient(cx - halfW, 0, cx + halfW, 0);
-      grd.addColorStop(0,    'rgba(' + rgba + ',0)');
-      grd.addColorStop(0.12, 'rgba(' + rgba + ',' + b.alpha + ')');
-      grd.addColorStop(0.88, 'rgba(' + rgba + ',' + b.alpha + ')');
-      grd.addColorStop(1,    'rgba(' + rgba + ',0)');
+      // ── Inner glow ────────────────────────────────────
+      strokeLine(i, base, time, LW * 3,  0.35, 20);
 
-      ctx.fillStyle = grd;
-      ctx.fillRect(cx - halfW, b.y, halfW * 2, b.h);
+      // ── Core line ─────────────────────────────────────
+      strokeLine(i, base, time, LW,      0.88, 10);
     }
 
-    // Vignette — darkens edges so text stays crisp
-    var vig = ctx.createRadialGradient(W / 2, H / 2, H * 0.05, W / 2, H / 2, H * 0.85);
-    vig.addColorStop(0, 'rgba(13,13,13,0.0)');
-    vig.addColorStop(1, 'rgba(13,13,13,0.88)');
+    // Centre vignette — softens the glow around the title text
+    var vig = ctx.createRadialGradient(W * 0.5, H * 0.5, 0, W * 0.5, H * 0.5, Math.max(W, H) * 0.7);
+    vig.addColorStop(0,   'rgba(13,13,13,0.55)');
+    vig.addColorStop(0.5, 'rgba(13,13,13,0.20)');
+    vig.addColorStop(1,   'rgba(13,13,13,0.70)');
     ctx.fillStyle = vig;
-    ctx.fillRect(0, 0, W, H);
-
-    // Light centre overlay keeps title legible
-    ctx.fillStyle = 'rgba(13,13,13,0.30)';
     ctx.fillRect(0, 0, W, H);
 
     requestAnimationFrame(tick);
@@ -98,5 +127,6 @@
 
   window.addEventListener('resize', resize);
   resize();
-  tick();
+  requestAnimationFrame(tick);
+
 }());
