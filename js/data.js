@@ -68,6 +68,19 @@ const EVENTS = [
 
   // ── Event 3 ─────────────────────────────────────────────────
   {
+    slug:   'maserati-gran-turismo',
+    name:   'Maserati Gran Turismo',
+    date:   '2025',
+    cover:  'photos/maserati-gran-turismo/cover.jpg',
+    photos: [
+      'photos/maserati-gran-turismo/01.jpg',
+      'photos/maserati-gran-turismo/02.jpg',
+      'photos/maserati-gran-turismo/03.jpg',
+    ]
+  },
+
+  // ── Event 4 ─────────────────────────────────────────────────
+  {
     slug:   'carfe-and-porsche',
     name:   'Carfe & Porsche',
     date:   'April 6, 2024',
