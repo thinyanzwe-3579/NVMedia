@@ -68,14 +68,14 @@ const EVENTS = [
 
   // ── Event 3 ─────────────────────────────────────────────────
   {
-    slug:   'maserati-gran-turismo',
-    name:   'Maserati Gran Turismo',
+    slug:   'miapex-2025',
+    name:   'MIAPEX 2025',
     date:   '2025',
-    cover:  'photos/maserati-gran-turismo/cover.jpg',
+    cover:  'photos/miapex-2025/cover.jpg',
     photos: [
-      'photos/maserati-gran-turismo/01.jpg',
-      'photos/maserati-gran-turismo/02.jpg',
-      'photos/maserati-gran-turismo/03.jpg',
+      'photos/miapex-2025/01.jpg',
+      'photos/miapex-2025/02.jpg',
+      'photos/miapex-2025/03.jpg',
     ]
   },
 
@@ -106,16 +106,16 @@ const EVENTS = [
     ]
   },
 
-  // ── Example event 3 ─────────────────────────────────────────
+  // ── Event 6 ─────────────────────────────────────────────────
   {
-    slug:   'miapex-2025',
-    name:   'MIAPEX 2025',
+    slug:   'maserati-gran-turismo',
+    name:   'Maserati Gran Turismo',
     date:   '2025',
-    cover:  'photos/miapex-2025/cover.jpg',
+    cover:  'photos/maserati-gran-turismo/cover.jpg',
     photos: [
-      'photos/miapex-2025/01.jpg',
-      'photos/miapex-2025/02.jpg',
-      'photos/miapex-2025/03.jpg',
+      'photos/maserati-gran-turismo/01.jpg',
+      'photos/maserati-gran-turismo/02.jpg',
+      'photos/maserati-gran-turismo/03.jpg',
     ]
   },
 
