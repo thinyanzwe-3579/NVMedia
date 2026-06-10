@@ -81,6 +81,19 @@ const EVENTS = [
 
   // ── Event 4 ─────────────────────────────────────────────────
   {
+    slug:   'sepang-2025',
+    name:   'SEPANG 2025',
+    date:   '2025',
+    cover:  'photos/sepang-2025/cover.jpg',
+    photos: [
+      'photos/sepang-2025/01.jpg',
+      'photos/sepang-2025/02.jpg',
+      'photos/sepang-2025/03.jpg',
+    ]
+  },
+
+  // ── Event 5 ─────────────────────────────────────────────────
+  {
     slug:   'carfe-and-porsche',
     name:   'Carfe & Porsche',
     date:   'April 6, 2024',
