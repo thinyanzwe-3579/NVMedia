@@ -7,14 +7,14 @@
   var ctx = canvas.getContext('2d');
   var W, H;
 
-  // 2D flat ribbon colors: white, red, near-black, silver, deep purple, deep blue
+  // Cinematic palette — film stock / luxury automotive
   var COLORS = [
-    [255, 255, 255],  // white
-    [215,   0,   0],  // red
-    [ 28,  28,  33],  // near-black
-    [188, 194, 200],  // silver
-    [ 78,   0, 168],  // deep purple
-    [  0,  22, 182],  // deep blue
+    [228, 218, 196],  // warm ivory / cream
+    [118,  12,  12],  // deep crimson
+    [ 28,  28,  33],  // carbon black
+    [130, 134, 140],  // titanium silver
+    [  0,  72,  75],  // deep cinematic teal
+    [118,  68,  12],  // burnt amber
   ];
 
   var STEPS = 220;
