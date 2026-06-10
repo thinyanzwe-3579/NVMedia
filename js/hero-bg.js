@@ -21,13 +21,12 @@
 
   function bandW() { return Math.max(W, H) * 0.028; }
 
-  // Static wave shape (no time parameter — never changes)
+  // Static wave — one dominant low-frequency sweep + very subtle secondary
   function sharedWave(t) {
-    var amp = Math.min(W, H) * 0.28;
+    var amp = Math.min(W, H) * 0.32;
     return (
-      amp * 0.62 * Math.sin(t * 1.5 * Math.PI) +
-      amp * 0.26 * Math.sin(t * 3.6 * Math.PI) +
-      amp * 0.12 * Math.sin(t * 7.8 * Math.PI)
+      amp * 0.88 * Math.sin(t * 0.85 * Math.PI) +
+      amp * 0.12 * Math.sin(t * 1.80 * Math.PI)
     );
   }
 
