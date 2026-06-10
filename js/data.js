@@ -69,14 +69,14 @@ const EVENTS = [
 
   // ── Example event 3 ─────────────────────────────────────────
   {
-    slug:   'exotic-car-show-ft-lauderdale-2024',
-    name:   'Exotic Car Show Ft. Lauderdale',
-    date:   'June 2024',
-    cover:  'photos/exotic-car-show-ft-lauderdale-2024/cover.jpg',
+    slug:   'miapex-2025',
+    name:   'MIAPEX 2025',
+    date:   '2025',
+    cover:  'photos/miapex-2025/cover.jpg',
     photos: [
-      'photos/exotic-car-show-ft-lauderdale-2024/01.jpg',
-      'photos/exotic-car-show-ft-lauderdale-2024/02.jpg',
-      'photos/exotic-car-show-ft-lauderdale-2024/03.jpg',
+      'photos/miapex-2025/01.jpg',
+      'photos/miapex-2025/02.jpg',
+      'photos/miapex-2025/03.jpg',
     ]
   },
 
