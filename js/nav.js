@@ -26,4 +26,13 @@
     lastY = currentY;
   }, { passive: true });
 
+  // Highlight active nav link based on current page
+  var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  var links = document.querySelectorAll('.nav-links a');
+  links.forEach(function (link) {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('nav-active');
+    }
+  });
+
 }());

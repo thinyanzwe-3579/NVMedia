@@ -99,6 +99,11 @@ img {
   opacity: 0.6;
 }
 
+.nav-links a.nav-active {
+  color: #cc0000;
+  opacity: 1;
+}
+
 /* ── Browse Portfolio Button ──────────────────────────── */
 
 .portfolio-btn-wrapper {
