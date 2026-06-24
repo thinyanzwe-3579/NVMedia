@@ -468,7 +468,7 @@ const EVENTS = [
     slug:     'carfe-and-porsche',
     name:     'Carfe & Porsche',
     featured: true,
-    date:   'April 6, 2024',
+    date:   '2025',
     cover:  'photos/carfe-and-porsche/cover.jpg',
     photos: [
       'photos/carfe-and-porsche/DSC_6400.jpg',
