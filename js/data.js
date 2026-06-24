@@ -656,6 +656,17 @@ const EVENTS = [
     ]
   },
 
+  // ── Event 9 ─────────────────────────────────────────────────
+  {
+    slug:     'gr86',
+    name:     'GR86',
+    date:     '2025',
+    featured: false,
+    cover:    'photos/gr86/cover.jpg',
+    photos:   [
+    ]
+  },
+
   // ── Add more events below this line ─────────────────────────
 
 ];
