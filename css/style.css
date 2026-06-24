@@ -193,6 +193,10 @@ img {
   color: var(--text-muted);
 }
 
+.contacts-details p {
+  margin-bottom: 1.5rem;
+}
+
 .contacts-details a {
   color: var(--text);
   text-decoration: none;
