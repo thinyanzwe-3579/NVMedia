@@ -28,7 +28,7 @@
 
     // Cover image
     const imgHTML = event.cover
-      ? '<img src="' + event.cover + '" alt="' + event.name + '" loading="lazy">'
+      ? '<img src="' + event.cover + '" alt="' + event.name + '" loading="lazy" decoding="async">'
       : '';
 
     // Optional date meta

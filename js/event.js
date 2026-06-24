@@ -70,7 +70,8 @@
     var img   = document.createElement('img');
     img.src   = src;
     img.alt   = event.name + ' — photo ' + (i + 1);
-    img.loading = 'lazy';
+    img.loading  = 'lazy';
+    img.decoding = 'async';
 
     // Zoom / expand icon overlay
     var icon  = document.createElement('div');
