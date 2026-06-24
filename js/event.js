@@ -34,9 +34,8 @@
   }
 
   // ── 4. Populate page text ────────────────────────────────────
-  document.title          = event.name + ' | Automotive Photography';
-  titleEl.textContent     = event.name;
-  navTitleEl.textContent  = event.name;
+  document.title      = event.name + ' | Automotive Photography';
+  titleEl.textContent = event.name;
 
   if (event.date) {
     dateEl.textContent = event.date;
