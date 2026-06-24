@@ -16,7 +16,10 @@
     return;
   }
 
-  EVENTS.forEach(function (event) {
+  var isHome = (window.location.pathname.split('/').pop() || 'index.html') === 'index.html';
+  var list   = isHome ? EVENTS.filter(function (e) { return e.featured !== false; }) : EVENTS;
+
+  list.forEach(function (event) {
     // Build the card element
     const card = document.createElement('a');
     card.href      = 'event.html?event=' + encodeURIComponent(event.slug);

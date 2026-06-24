@@ -40,9 +40,10 @@ const EVENTS = [
 
   // ── Example event 1 ─────────────────────────────────────────
   {
-    slug:   'retrohavoc-2025',
-    name:   'RetroHavoc 2025',
-    date:   '2025',
+    slug:     'retrohavoc-2025',
+    name:     'RetroHavoc 2025',
+    date:     '2025',
+    featured: true,
     cover:  'photos/retrohavoc-2025/cover.jpg',
     photos: [
       'photos/retrohavoc-2025/01.jpg',
@@ -55,9 +56,10 @@ const EVENTS = [
 
   // ── Event 2 ─────────────────────────────────────────────────
   {
-    slug:   'distrix14-2025',
-    name:   'DISTRIX14 2025',
-    date:   '2025',
+    slug:     'distrix14-2025',
+    name:     'DISTRIX14 2025',
+    date:     '2025',
+    featured: true,
     cover:  'photos/distrix14-2025/cover.JPG',
     photos: [
       'photos/distrix14-2025/DSC_0118.jpg',
@@ -214,9 +216,10 @@ const EVENTS = [
 
   // ── Event 3 ─────────────────────────────────────────────────
   {
-    slug:   'miapex-2025',
-    name:   'MIAPEX 2025',
-    date:   '2025',
+    slug:     'miapex-2025',
+    name:     'MIAPEX 2025',
+    date:     '2025',
+    featured: false,
     cover:  'photos/miapex-2025/cover.JPG',
     photos: [
       'photos/miapex-2025/DSC_7571.JPG',
@@ -386,9 +389,10 @@ const EVENTS = [
 
   // ── Event 4 ─────────────────────────────────────────────────
   {
-    slug:   'sepang-2025',
-    name:   'SEPANG 2025',
-    date:   '2025',
+    slug:     'sepang-2025',
+    name:     'SEPANG 2025',
+    date:     '2025',
+    featured: true,
     cover:  'photos/sepang-2025/cover.jpg',
     photos: [
       'photos/sepang-2025/01.jpg',
@@ -399,8 +403,9 @@ const EVENTS = [
 
   // ── Event 5 ─────────────────────────────────────────────────
   {
-    slug:   'carfe-and-porsche',
-    name:   'Carfe & Porsche',
+    slug:     'carfe-and-porsche',
+    name:     'Carfe & Porsche',
+    featured: true,
     date:   'April 6, 2024',
     cover:  'photos/carfe-and-porsche/cover.jpg',
     photos: [
@@ -485,8 +490,9 @@ const EVENTS = [
 
   // ── Event 6 ─────────────────────────────────────────────────
   {
-    slug:   'maserati-gran-turismo',
-    name:   'Maserati Gran Turismo',
+    slug:     'maserati-gran-turismo',
+    name:     'Maserati Gran Turismo',
+    featured: true,
     date:   '2025',
     cover:  'photos/maserati-gran-turismo/cover.jpg',
     photos: [
@@ -548,8 +554,9 @@ const EVENTS = [
 
   // ── Event 7 ─────────────────────────────────────────────────
   {
-    slug:   'rwb-anniversary',
-    name:   'RWB Anniversary',
+    slug:     'rwb-anniversary',
+    name:     'RWB Anniversary',
+    featured: true,
     date:   '2025',
     cover:  'photos/rwb-anniversary/cover.jpg',
     photos: [
