@@ -39,6 +39,117 @@ img {
 }
 
 /* ════════════════════════════════════════════════════════
+   SITE-WIDE NAVBAR
+   ════════════════════════════════════════════════════════ */
+
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.3rem 2.5rem;
+  background: rgba(5, 5, 5, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  transform: translateY(0);
+  transition: transform 0.4s var(--transition-smooth);
+}
+
+.site-nav.nav-hidden {
+  transform: translateY(-100%);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.25em;
+  color: var(--text);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.nav-logo:hover {
+  opacity: 0.7;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+  opacity: 0.6;
+}
+
+/* ════════════════════════════════════════════════════════
+   CONTACTS PAGE
+   ════════════════════════════════════════════════════════ */
+
+.contacts-main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 2rem 4rem;
+}
+
+.contacts-content {
+  text-align: center;
+}
+
+.contacts-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  letter-spacing: 0.15em;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.contacts-subtitle {
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+}
+
+.contacts-details {
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.contacts-details a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 2px;
+  transition: border-color 0.2s;
+}
+
+.contacts-details a:hover {
+  border-color: var(--text);
+}
+
+/* ════════════════════════════════════════════════════════
    HOME PAGE — HERO
    ════════════════════════════════════════════════════════ */
 
