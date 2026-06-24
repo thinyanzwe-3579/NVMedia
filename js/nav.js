@@ -4,8 +4,10 @@
   var nav       = document.getElementById('site-nav');
   var lastY     = 0;
   var threshold = 8;
+  var ticking   = false;
 
-  window.addEventListener('scroll', function () {
+  function updateNav() {
+    ticking = false;
     var currentY = window.pageYOffset;
 
     // Always show at very top of page
@@ -24,6 +26,14 @@
     }
 
     lastY = currentY;
+  }
+
+  // Batch scroll work into one read per animation frame to avoid jank
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      window.requestAnimationFrame(updateNav);
+      ticking = true;
+    }
   }, { passive: true });
 
   // Highlight active nav link based on current page

@@ -521,6 +521,10 @@ img {
   overflow: hidden;
   cursor: pointer;
   position: relative;
+  /* Skip rendering work for off-screen photos — keeps scrolling smooth
+     on long galleries. Browser remembers each item's real size once seen. */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 400px;
 }
 
 .gallery-item img {
