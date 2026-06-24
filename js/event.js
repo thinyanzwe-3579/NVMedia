@@ -73,19 +73,7 @@
     img.loading  = 'lazy';
     img.decoding = 'async';
 
-    // Zoom / expand icon overlay
-    var icon  = document.createElement('div');
-    icon.className = 'gallery-item-icon';
-    icon.innerHTML =
-      '<svg viewBox="0 0 24 24" aria-hidden="true">' +
-        '<circle cx="11" cy="11" r="7"/>' +
-        '<line x1="16.5" y1="16.5" x2="22" y2="22"/>' +
-        '<line x1="11" y1="8" x2="11" y2="14"/>' +
-        '<line x1="8"  y1="11" x2="14" y2="11"/>' +
-      '</svg>';
-
     item.appendChild(img);
-    item.appendChild(icon);
 
     // Open lightbox on click or Enter/Space
     item.addEventListener('click', function () { openLightbox(i); });

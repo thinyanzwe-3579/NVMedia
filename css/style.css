@@ -526,40 +526,12 @@ img {
 .gallery-item img {
   width: 100%;
   height: auto;
-  filter: brightness(0.88);
-  transition:
-    transform 0.55s var(--transition-smooth),
-    filter   0.55s ease;
+  transition: transform 0.55s var(--transition-smooth);
 }
 
 .gallery-item:hover img,
 .gallery-item:focus-visible img {
   transform: scale(1.04);
-  filter: brightness(0.5);
-}
-
-.gallery-item-icon {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.35s ease;
-  pointer-events: none;
-}
-
-.gallery-item:hover .gallery-item-icon,
-.gallery-item:focus-visible .gallery-item-icon {
-  opacity: 1;
-}
-
-.gallery-item-icon svg {
-  width: 2.5rem;
-  height: 2.5rem;
-  stroke: rgba(255, 255, 255, 0.85);
-  fill: none;
-  stroke-width: 1.5;
 }
 
 /* ════════════════════════════════════════════════════════
