@@ -438,7 +438,7 @@ const EVENTS = [
     name:     'SEPANG 2025',
     date:     '2025',
     featured: true,
-    cover:  'photos/sepang-2025/cover.jpg',
+    cover:  'photos/sepang-2025/cover2.jpg',
     photos: [
       'photos/sepang-2025/DSC_0229.jpg','photos/sepang-2025/DSC_0311.jpg','photos/sepang-2025/DSC_0330.jpg','photos/sepang-2025/DSC_0384.jpg','photos/sepang-2025/DSC_0393.jpg',
       'photos/sepang-2025/DSC_0399.jpg','photos/sepang-2025/DSC_0403.jpg','photos/sepang-2025/DSC_0410.jpg','photos/sepang-2025/DSC_0412-2.jpg','photos/sepang-2025/DSC_0412.jpg',
