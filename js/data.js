@@ -645,6 +645,17 @@ const EVENTS = [
     ]
   },
 
+  // ── Event 8 ─────────────────────────────────────────────────
+  {
+    slug:     'autodetailerstudio-drives',
+    name:     "AutoDetailerStudio's Drives",
+    date:     '2025',
+    featured: false,
+    cover:    'photos/autodetailerstudio-drives/cover.jpg',
+    photos:   [
+    ]
+  },
+
   // ── Add more events below this line ─────────────────────────
 
 ];
