@@ -47,12 +47,20 @@
     bgImg.src    = event.cover;
     bgImg.alt    = '';
     bgImg.className = 'event-header-bg';
+    bgImg.fetchPriority = 'high';   // hero banner is the LCP element — load it first
     headerEl.insertBefore(bgImg, headerEl.firstChild);
   }
 
   // ── 6. Build the photo grid ──────────────────────────────────
   var currentIndex = 0;
   var photos       = Array.isArray(event.photos) ? event.photos : [];
+
+  // Map a full-size path "photos/<slug>/<file>" to its lightweight
+  // grid thumbnail "photos/<slug>/thumb/<file>" (~1000px, generated offline).
+  // The grid shows thumbnails (fast); the lightbox loads the full original.
+  function thumb(path) {
+    return path.replace(/\/([^\/]+)$/, '/thumb/$1');
+  }
 
   if (photos.length === 0) {
     gridEl.innerHTML =
@@ -68,7 +76,7 @@
     item.setAttribute('aria-label', 'Open photo ' + (i + 1));
 
     var img   = document.createElement('img');
-    img.src   = src;
+    img.src   = thumb(src);
     img.alt   = event.name + ' — photo ' + (i + 1);
     img.loading  = 'lazy';
     img.decoding = 'async';
@@ -106,6 +114,12 @@
     lbImg.src = photos[currentIndex];
     lbImg.alt = event.name + ' — photo ' + (currentIndex + 1);
     lbCounter.textContent = (currentIndex + 1) + ' / ' + photos.length;
+
+    // Warm the browser cache for the neighbours so Prev/Next feel instant.
+    if (photos.length > 1) {
+      new Image().src = photos[(currentIndex + 1) % photos.length];
+      new Image().src = photos[(currentIndex - 1 + photos.length) % photos.length];
+    }
   }
 
   function prevPhoto() {

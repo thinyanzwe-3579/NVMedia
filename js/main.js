@@ -26,9 +26,10 @@
     card.className = 'event-card' + (event.cover ? '' : ' no-cover');
     card.setAttribute('aria-label', event.name);
 
-    // Cover image
+    // Cover image — use the lightweight thumbnail for the card grid
+    const coverThumb = event.cover ? event.cover.replace(/\/([^\/]+)$/, '/thumb/$1') : '';
     const imgHTML = event.cover
-      ? '<img src="' + event.cover + '" alt="' + event.name + '" loading="lazy" decoding="async">'
+      ? '<img src="' + coverThumb + '" alt="' + event.name + '" loading="lazy" decoding="async">'
       : '';
 
     // Optional date meta
