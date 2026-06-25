@@ -1015,7 +1015,6 @@ const EVENTS = [
       'photos/kyaw-zin-oos-drift-meet/36.jpg',
       'photos/kyaw-zin-oos-drift-meet/37.jpg',
       'photos/kyaw-zin-oos-drift-meet/38.jpg',
-      'photos/kyaw-zin-oos-drift-meet/39.jpg',
       'photos/kyaw-zin-oos-drift-meet/40.jpg',
       'photos/kyaw-zin-oos-drift-meet/41.jpg',
       'photos/kyaw-zin-oos-drift-meet/42.jpg',
