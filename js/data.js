@@ -760,6 +760,17 @@ const EVENTS = [
     ]
   },
 
+  // ── Event 13 ────────────────────────────────────────────────
+  {
+    slug:     'bmw-m3',
+    name:     'BMW M3',
+    date:     '2024',
+    featured: false,
+    cover:    'photos/bmw-m3/cover.jpg',
+    photos:   [
+    ]
+  },
+
   // ── Add more events below this line ─────────────────────────
 
 ];
