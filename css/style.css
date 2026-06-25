@@ -673,11 +673,58 @@ img {
   }
 
   .lightbox-img-wrapper {
-    padding: 3.5rem 3rem;
+    padding: 3.5rem 1.5rem;
   }
 
   .lightbox-prev,
   .lightbox-next {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    padding: 1.2rem;   /* bigger tap target */
   }
+
+  .lightbox-prev { left:  0; }
+  .lightbox-next { right: 0; }
+}
+
+/* ── Small phones (iPhone SE, 375px and up) ─────────────── */
+@media (max-width: 480px) {
+  .site-nav {
+    padding: 1rem 1.1rem;
+  }
+
+  .nav-links {
+    gap: 1.2rem;
+  }
+
+  .nav-links a {
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+  }
+
+  .portfolio-page-header {
+    padding: 7rem 1.2rem 1.5rem;
+  }
+
+  .gallery-item--wide img {
+    height: 40vh;
+  }
+}
+
+/* ── Touch devices: always show event card meta ─────────── */
+@media (hover: none) {
+  .event-card-meta {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Eliminate tap delay + highlight on interactive els ─── */
+a, button,
+.gallery-item,
+.event-card,
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
