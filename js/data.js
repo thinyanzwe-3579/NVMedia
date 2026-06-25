@@ -622,8 +622,7 @@ const EVENTS = [
   // ── Event 8 ─────────────────────────────────────────────────
   {
     slug:     'autodetailerstudio-drives',
-    name:     "AutoDetailerStudio's Drives",
-    date:     '2025',
+    name:     'ADS Drive Club',
     featured: false,
     cover:    'photos/autodetailerstudio-drives/cover.JPG',
     photos:   [
