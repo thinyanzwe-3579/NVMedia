@@ -815,11 +815,12 @@ const EVENTS = [
 
   // ── Event 9 ─────────────────────────────────────────────────
   {
-    slug:     'gr86',
-    name:     'GR86',
-    date:     '2025',
-    featured: false,
-    cover:    'photos/gr86/cover.jpg',
+    slug:       'gr86',
+    name:       'GR86',
+    date:       '2025',
+    featured:   false,
+    cover:      'photos/gr86/cover.jpg',
+    widePhotos: ['photos/gr86/DSC_2584.jpg'],
     photos:   [
       'photos/gr86/DSC_2355.jpg',
       'photos/gr86/DSC_2366.jpg',

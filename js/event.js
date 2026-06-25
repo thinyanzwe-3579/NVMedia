@@ -68,15 +68,18 @@
       'No photos in this event yet.</p>';
   }
 
+  var wideSet = new Set(Array.isArray(event.widePhotos) ? event.widePhotos : []);
+
   photos.forEach(function (src, i) {
+    var isWide  = wideSet.has(src);
     var item    = document.createElement('div');
-    item.className = 'gallery-item';
+    item.className = isWide ? 'gallery-item gallery-item--wide' : 'gallery-item';
     item.tabIndex  = 0;
     item.setAttribute('role', 'button');
     item.setAttribute('aria-label', 'Open photo ' + (i + 1));
 
     var img   = document.createElement('img');
-    img.src   = thumb(src);
+    img.src   = isWide ? src : thumb(src);
     img.alt   = event.name + ' — photo ' + (i + 1);
     img.loading  = 'lazy';
     img.decoding = 'async';
