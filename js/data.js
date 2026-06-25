@@ -651,7 +651,7 @@ const EVENTS = [
     name:     "AutoDetailerStudio's Drives",
     date:     '2025',
     featured: false,
-    cover:    'photos/autodetailerstudio-drives/DSC_2035.jpg',
+    cover:    'photos/autodetailerstudio-drives/cover.JPG',
     photos:   [
       'photos/autodetailerstudio-drives/DSC_2035.jpg',
       'photos/autodetailerstudio-drives/DSC_2054.jpg',
