@@ -735,7 +735,6 @@ const EVENTS = [
       'photos/bmw-m340i/DSC_5894.jpg',
       'photos/bmw-m340i/DSC_5900.jpg',
       'photos/bmw-m340i/DSC_5903.jpg',
-      'photos/bmw-m340i/DSC_5905.jpg',
       'photos/bmw-m340i/DSC_5907.jpg',
       'photos/bmw-m340i/DSC_5911.jpg',
       'photos/bmw-m340i/DSC_5916.jpg',
