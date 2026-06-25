@@ -738,6 +738,17 @@ const EVENTS = [
     ]
   },
 
+  // ── Event 11 ────────────────────────────────────────────────
+  {
+    slug:     'the-secretariat',
+    name:     'The Secretariat',
+    date:     '2024',
+    featured: false,
+    cover:    'photos/the-secretariat/cover.jpg',
+    photos:   [
+    ]
+  },
+
   // ── Add more events below this line ─────────────────────────
 
 ];
