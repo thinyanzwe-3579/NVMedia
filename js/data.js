@@ -749,6 +749,17 @@ const EVENTS = [
     ]
   },
 
+  // ── Event 12 ────────────────────────────────────────────────
+  {
+    slug:     'kyaw-zin-oos-drift-meet',
+    name:     "Kyaw Zin Oo's Drift Meet",
+    date:     '2025',
+    featured: false,
+    cover:    'photos/kyaw-zin-oos-drift-meet/cover.jpg',
+    photos:   [
+    ]
+  },
+
   // ── Add more events below this line ─────────────────────────
 
 ];
