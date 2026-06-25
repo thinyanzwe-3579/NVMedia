@@ -727,6 +727,17 @@ const EVENTS = [
     ]
   },
 
+  // ── Event 10 ────────────────────────────────────────────────
+  {
+    slug:     'bmw-m340i',
+    name:     'BMW M340i',
+    date:     '2025',
+    featured: false,
+    cover:    'photos/bmw-m340i/cover.jpg',
+    photos:   [
+    ]
+  },
+
   // ── Add more events below this line ─────────────────────────
 
 ];
