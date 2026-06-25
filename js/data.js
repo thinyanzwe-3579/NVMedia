@@ -799,6 +799,8 @@ const EVENTS = [
       'photos/autodetailerstudio-drives/DSC_2242.jpg',
       'photos/autodetailerstudio-drives/DSC_2254.jpg',
       'photos/autodetailerstudio-drives/DSC_2336-2.jpg',
+      'photos/autodetailerstudio-drives/DSC_3276.jpg',
+      'photos/autodetailerstudio-drives/DSC_3433.jpg',
       'photos/autodetailerstudio-drives/DSC_9433.JPG',
       'photos/autodetailerstudio-drives/DSC_9439.JPG',
       'photos/autodetailerstudio-drives/DSC_9446.JPG',
@@ -809,6 +811,7 @@ const EVENTS = [
       'photos/autodetailerstudio-drives/DSC_9497.JPG',
       'photos/autodetailerstudio-drives/DSC_9504.JPG',
       'photos/autodetailerstudio-drives/DSC_9511.JPG',
+      'photos/autodetailerstudio-drives/DSC_9537.JPG',
       'photos/autodetailerstudio-drives/DSC_9588.JPG',
     ]
   },
