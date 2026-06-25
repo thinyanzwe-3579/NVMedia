@@ -944,6 +944,17 @@ const EVENTS = [
     ]
   },
 
+  // ── Event 14 ────────────────────────────────────────────────
+  {
+    slug:     'distrix14-harley-davidson',
+    name:     'DISTRIX14 | Harley Davidson',
+    date:     '2025',
+    featured: false,
+    cover:    'photos/distrix14-harley-davidson/cover.jpg',
+    photos:   [
+    ]
+  },
+
   // ── Add more events below this line ─────────────────────────
 
 ];
