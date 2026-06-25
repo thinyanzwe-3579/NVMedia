@@ -538,18 +538,6 @@ img {
   transform: scale(1.04);
 }
 
-.gallery-item--wide {
-  column-span: all;
-  break-inside: auto;
-  content-visibility: visible;
-}
-
-.gallery-item--wide img {
-  width: 100%;
-  height: 65vh;
-  object-fit: cover;
-  object-position: center;
-}
 
 /* ════════════════════════════════════════════════════════
    LIGHTBOX
